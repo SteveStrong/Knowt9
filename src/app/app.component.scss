@@ -1,0 +1,18 @@
+.fixed-top {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+  }
+
+  .spacer {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .push-right {
+    flex: 1 1 auto;
+  }
+
+  .button-row button, .button-row a {
+    margin-right: 8px;
+  }

@@ -1,0 +1,14 @@
+<mat-tab-group>
+  <mat-tab label="Search">
+    <div class="flex-container">
+
+      <app-drawing></app-drawing>
+      <app-info #container [@slideInOut]="sliderState"> </app-info>
+    </div>
+  </mat-tab>
+  <mat-tab label="Details">
+      <div class="flex-container">
+        <app-document></app-document>
+      </div>
+    </mat-tab>
+</mat-tab-group>

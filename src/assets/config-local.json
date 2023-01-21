@@ -1,0 +1,7 @@
+{
+  "loginURL": "https://loginservice-dev-as.azurewebsites.net/api",
+  "libraryURL": "https://loginservice-dev-as.azurewebsites.net/api",
+  "predictURL": "https://legalsemanticapi.azurewebsites.net/teamknowtshare",
+  "localDebug": false
+  
+}

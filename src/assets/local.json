@@ -1,0 +1,7 @@
+{
+  "loginURL": "https://localhost:44360/api",
+  "libraryURL": "https://localhost:44360/api",
+  "predictURL": "https://legalsemanticapi.azurewebsites.net/teamknowtshare",
+  "localDebug": false
+  
+}

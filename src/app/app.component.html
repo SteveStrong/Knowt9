@@ -1,0 +1,47 @@
+<mat-toolbar color="primary" class="fixed-top">
+  <h3 class="spacer">{{title}}&nbsp;{{version}}</h3>
+  <h4 class="spacer" *ngIf="currentUser" >{{currentUser.displayName()}}  </h4>
+  <h4 class="spacer" *ngIf="currentTeam" >{{currentTeam.workspace}}</h4>
+  <h4 class="spacer">|</h4>
+
+  <div class="button-row">
+    <a mat-stroked-button  [routerLink]="['/drawing']" ><h4>Drawings</h4></a>
+    <a mat-stroked-button  [routerLink]="['/scenes']" ><h4>Scenes</h4></a>
+   <a mat-stroked-button  [routerLink]="['/teams']" >Teams</a>
+    <button mat-stroked-button  [routerLink]="['/library']" >Library</button>
+    <span class="spacer" style="width:250px" ><em>{{currentFileName}}</em></span>
+    <span class="spacer">|</span>
+
+    <input type="file" style="display: none" (change)="onFileOpen($event)" #hiddenfileinput />
+    <button mat-stroked-button class="push-right" (click)="hiddenfileinput.click()">Open File</button>
+    <button mat-stroked-button class="push-right" (click)="onFileSave($event)">Save File</button>
+    <button mat-stroked-button class="push-right" *ngIf="isDirty()" (click)="applyAutoSave($event)">AutoSave ({{autoSaveCountdown()}})</button>
+    <button mat-stroked-button *ngIf="!currentUser" [routerLink]="['/login']">Login</button>
+    <button mat-stroked-button *ngIf="currentUser"  (click)="doLogout()">Logout</button>
+  </div>
+
+</mat-toolbar>
+
+<!-- <mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <p>Auto-resizing sidenav</p>
+    <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+    <button (click)="showFiller = !showFiller" mat-raised-button>
+      Toggle extra text
+    </button>
+  </mat-drawer>
+
+  <div class="example-sidenav-content">
+    <button type="button" mat-button (click)="drawer.toggle()">
+      Toggle sidenav
+    </button>
+    <router-outlet *ngIf="hasConfig"></router-outlet>
+  </div>
+
+</mat-drawer-container> -->
+
+<router-outlet *ngIf="hasConfig"></router-outlet>
+
+
+
+
